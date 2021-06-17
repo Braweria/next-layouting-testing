@@ -2,9 +2,6 @@ import "../styles/globals.css";
 import MainLayout from "../components/MainLayout";
 
 export default function App({ Component, pageProps }) {
-  return (
-    <MainLayout>
-      <Component {...pageProps} />
-    </MainLayout>
-  );
+  const getLayout = Component.getLayout || ((page) => page);
+  return <MainLayout>{getLayout(<Component {...pageProps} />)}</MainLayout>;
 }

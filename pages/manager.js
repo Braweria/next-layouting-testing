@@ -1,7 +1,7 @@
 import { getContentLayout } from "../components/ContentLayout";
 import ManagerLayout from "../components/ManagerLayout";
 
-export function Manager() {
+export default function Manager() {
   return (
     <div>
       <ManagerLayout />
@@ -9,9 +9,9 @@ export function Manager() {
   );
 }
 
-const getManager = (page) =>
+Manager.getLayout = (page) =>
   getContentLayout(<Manager>{page}</Manager>, {
     tabs: ["Übersicht", "Liste", "Aufgaben", "Müll"],
   });
 
-export default getManager;
+// export default getManager;
